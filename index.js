@@ -40,8 +40,10 @@ window.addEventListener('resize', (e) => {
     if (container.innerWidth > 750) {
         nav_list.forEach((item) => {
             let list = item.classList
-            list.remove('pop-out')
-            list.add('hiding')
+                list.remove('pop-out')
+                myfunc(count=0)
+                btn.style.background = 'red'
+                list.add('hiding')
         })
     }
     
