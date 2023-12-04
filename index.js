@@ -14,7 +14,7 @@ let myfunc = (c) =>{
         e.target.style = "background:lime;transition:.5s"
         nav_list.forEach((item, i) => {
             setTimeout(() => {
-                let list = item.classList
+                let list = item.parentElement.classList
                 list.remove('hiding')
                 list.add('pop-out')
             }, 250 * i)
@@ -24,7 +24,7 @@ let myfunc = (c) =>{
         e.target.style = "background:red;transition:.5s"
         nav_list.forEach((item, i) => {
             setTimeout(() => {
-                let list = item.classList
+                let list = item.parentElement.classList
                 list.remove('pop-out')
                 list.add('hiding')
             }, 250 * i)
@@ -39,7 +39,7 @@ window.addEventListener('resize', (e) => {
     let container = e.target;
     if (container.innerWidth > 750) {
         nav_list.forEach((item) => {
-            let list = item.classList
+            let list = item.parentElement.classList
                 list.remove('pop-out')
                 myfunc(count=0)
                 btn.style.background = 'red'

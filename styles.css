@@ -46,20 +46,30 @@ width: inherit;
 height: 15vh;
 overflow: hidden;
 }
-.list-link,
-.list-link2{
+.list-item,
+.list-item2{
 color: #fff;
 transition:.25s;
 width: 100%;
 text-align: center;
 padding: 2rem 0;
 }
-.list-link:hover,
-.list-link2:hover{
+.list-item:hover,
+.list-item2:hover{
     background: ghostwhite;
     color: #333;
     transition: .25s;
     opacity: .75;
+}
+.list-link,
+.list-link2{
+    color: #fff;
+    transition: .25s;
+}
+.list-link:hover,
+.list-link2:hover{
+    color: #333;
+    transition: .25s;
 }
 @media screen and (max-width:750px){
     .nav-container2{
