@@ -23,13 +23,15 @@ body{
     color: #fff;
     
 }
+
 .nav-menu-btn{
     width: 25px;
     height: 25px;
-    background: red;
+    transition:.5s;
     border-radius: 50%;
     margin: 1rem 1rem;
     display: none;
+    background-color: red;
 }
 .nav-container,
 .nav-container2{

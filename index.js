@@ -1,50 +1,33 @@
 let btn = document.querySelector('.nav-menu-btn')
-let nav_list = document.querySelectorAll('.list-link2')
+let nav_list2 = document.querySelectorAll('.list-link2')
 let nav = document.getElementById('nav2')
 let count = 0;
-
-
+let background_array = ['lime','red']
+let c = 0;
 //event listener to toggle the side-menu
-let myfunc = (c) =>{ 
-    btn.addEventListener('click', (e) => {
+ clickMe = () =>{
     c++
-    console.log(c)
-
-    if (c % 2 != 0) {
-        e.target.style = "background:lime;transition:.5s"
-        nav_list.forEach((item, i) => {
+    btn.style=`background-color:${background_array[[1,0][c%2]]}`
+        btn.classList.toggle('color-origin')
+        nav_list2.forEach((item, i) => {
             setTimeout(() => {
                 let list = item.parentElement.classList
-                list.remove('hiding')
-                list.add('pop-out')
+                list.toggle('pop-out')
             }, 250 * i)
         })
-    }
-    else {
-        e.target.style = "background:red;transition:.5s"
-        nav_list.forEach((item, i) => {
-            setTimeout(() => {
-                let list = item.parentElement.classList
-                list.remove('pop-out')
-                list.add('hiding')
-            }, 250 * i)
-        })
-    }
-})
-
 }
-myfunc(count)
+
+
 //event listener on resize
 window.addEventListener('resize', (e) => {
     let container = e.target;
     if (container.innerWidth > 750) {
-        nav_list.forEach((item) => {
+        nav_list2.forEach((item) => {
             let list = item.parentElement.classList
                 list.remove('pop-out')
-                myfunc(count=0)
                 btn.style.background = 'red'
                 list.add('hiding')
+                c=0;
         })
-    }
-    
+    } 
 })
